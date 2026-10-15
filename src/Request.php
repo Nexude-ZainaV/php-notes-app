@@ -24,6 +24,8 @@ final class Request
 
     public static function fromGlobals(): self
     {
+        // PHP exposes headers as HTTP_* keys in $_SERVER; turn them back into lower-case names.
+        // Content-Type is the odd one out: it arrives as CONTENT_TYPE, without the prefix.
         $headers = [];
         foreach ($_SERVER as $key => $value) {
             if (str_starts_with($key, 'HTTP_')) {

@@ -25,6 +25,7 @@ final class NoteRepository
         $params = [];
         if ($search !== '') {
             $sql .= " WHERE title LIKE :q ESCAPE '\\' OR body LIKE :q ESCAPE '\\'";
+            // Escape % and _ (and the backslash itself) so they match as plain text.
             $params['q'] = '%' . addcslashes($search, '%_\\') . '%';
         }
         $sql .= ' ORDER BY is_pinned DESC, updated_at DESC, id DESC';
@@ -68,6 +69,7 @@ final class NoteRepository
             'is_pinned' => (int) $isPinned,
             'now' => self::now(),
         ]);
+        // updated_at always changes, so 0 affected rows means the id does not exist.
         return $statement->rowCount() === 0 ? null : $this->find($id);
     }
 

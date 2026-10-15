@@ -8,6 +8,7 @@ use App\Database;
 use App\NoteRepository;
 use PHPUnit\Framework\TestCase;
 
+/** Repository queries against an in-memory SQLite database. Run: composer test */
 final class NoteRepositoryTest extends TestCase
 {
     private NoteRepository $notes;

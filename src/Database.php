@@ -6,6 +6,7 @@ namespace App;
 
 use PDO;
 
+/** PDO connection setup and the schema for the single notes table (SQLite). */
 final class Database
 {
     /** Opens a PDO connection configured for safety: exceptions on error, real prepared statements. */

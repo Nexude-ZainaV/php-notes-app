@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App;
 
+/** Renders the PHP templates in templates/ with an HTML escaper ($e) in scope. */
 final class View
 {
     public function __construct(private readonly string $templateDir)

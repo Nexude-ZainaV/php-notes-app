@@ -11,7 +11,10 @@ use App\Request;
 use App\Response;
 use PHPUnit\Framework\TestCase;
 
-/** End-to-end: requests go through the real router, controller, templates and an in-memory database. */
+/**
+ * End-to-end: requests go through the real router, controller, templates and an in-memory database.
+ * Run: composer test
+ */
 final class AppTest extends TestCase
 {
     /** @var array<string, mixed> */

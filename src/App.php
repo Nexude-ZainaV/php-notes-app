@@ -9,6 +9,7 @@ use PDO;
 /** Composition root: wires the dependencies and the routes in one place. */
 final class App
 {
+    // Added to every response. index.php reuses them for the 500 page too.
     public const SECURITY_HEADERS = [
         'Content-Security-Policy' => "default-src 'self'; script-src 'self'; style-src 'self'; "
             . "img-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'",

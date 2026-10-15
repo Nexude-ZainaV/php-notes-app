@@ -16,6 +16,7 @@ final class Router
 
     public function add(string $method, string $pattern, callable $handler): self
     {
+        // '/api/notes/{id}' becomes '#^/api/notes/(?P<id>\d+)$#'
         $regex = '#^' . preg_replace('#\{(\w+)\}#', '(?P<$1>\d+)', $pattern) . '$#';
         $this->routes[] = ['method' => strtoupper($method), 'regex' => $regex, 'handler' => $handler];
         return $this;

@@ -57,6 +57,7 @@ function renderNote(note) {
     return item;
 }
 
+// Redraw the list from API data. The server-rendered empty message is replaced by announce().
 function renderList(notes) {
     list.replaceChildren(...notes.map(renderNote));
     document.querySelector(".empty")?.remove();
@@ -103,6 +104,7 @@ async function togglePin(note) {
     }
 }
 
+// Swap a card for an inline edit form. Cancel puts the original card back.
 function startEdit(item, note) {
     const title = el("input", { name: "title", value: note.title, required: true, ariaLabel: "Title" });
     const body = el("textarea", { name: "body", value: note.body, rows: 4, ariaLabel: "Note" });

@@ -7,6 +7,7 @@ namespace Tests;
 use App\Csrf;
 use PHPUnit\Framework\TestCase;
 
+/** CSRF token generation and checking. Run: composer test */
 final class CsrfTest extends TestCase
 {
     public function testTokenIsRandomStableAndStoredInSession(): void

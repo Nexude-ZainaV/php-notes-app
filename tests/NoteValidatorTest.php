@@ -8,6 +8,7 @@ use App\NoteValidator;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
+/** Input validation rules for notes. Run: composer test */
 final class NoteValidatorTest extends TestCase
 {
     public function testTrimsAndAcceptsValidInput(): void
